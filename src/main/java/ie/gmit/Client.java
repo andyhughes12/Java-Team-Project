@@ -139,24 +139,8 @@ public class Client {
         {
             throw new IllegalArgumentException("Invalid email");
         }
-
-//        String regex = "^(.+)@(.+)$";
-//
-//        Pattern pattern = Pattern.compile(regex);
-//
-//        String entry = email.getEmail();
-//
-//        Matcher matcher = pattern.matcher(entry);
-//        boolean matchFound = matcher.find();
-//            if(matchFound)
-//            {
-//                this.email = email;
-//            }
-//            else
-//            {
-//                throw new IllegalArgumentException("Invalid email");
-//            }
     }
+    public int getAge() { return age; }
 
     public String getEmail() {
         return email;
@@ -183,23 +167,6 @@ public class Client {
         {
             throw new IllegalArgumentException("Invalid balance");
         }
-
-//        boolean b = false;
-//
-//        if (BigDecimal.valueOf(balance).scale() <= 2)
-//        {
-//            b == true;
-//        }
-//        boolean b = (BigDecimal.valueOf(balance).scale() <= 2);
-//
-//        if( b == true )
-//        {
-//            this.balance = balance;
-//        }
-//        else
-//        {
-//            throw new IllegalArgumentException("Invalid balance");
-//        }
     }
 
     public double getBalance(){ return balance; }
