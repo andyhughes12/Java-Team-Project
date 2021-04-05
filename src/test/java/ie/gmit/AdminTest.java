@@ -27,7 +27,7 @@ public class AdminTest {
 
     @Test
     void testEmployeeNum() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Admin("Joe", "gxf500", 1234567) );
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Admin("Joe", "gxf5000", 1234567) );
         assertEquals("Invalid Employee Number", e.getMessage());
     }
 }

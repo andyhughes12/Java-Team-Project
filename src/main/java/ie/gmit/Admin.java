@@ -15,7 +15,7 @@ public class Admin {
     }
 
     public void setUsername(String username){
-        if(username.length()>3)
+        if(username.length()>=3)
         {
             this.username = username;
         } else
@@ -29,7 +29,7 @@ public class Admin {
     }
 
     public void setPassword(String password){
-        if(password.length()>7)
+        if(password.length()>=7)
         {
             this.password = password;
         } else
