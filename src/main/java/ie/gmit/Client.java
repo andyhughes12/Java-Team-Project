@@ -51,7 +51,7 @@ public class Client {
     }
 
 
-    public String setName(String name) {
+    public void setName(String name) {
         if( name.length() > 2 )
         {
             this.name = name;
@@ -60,8 +60,6 @@ public class Client {
         {
             throw new IllegalArgumentException("Invalid name");
         }
-
-        return name;
     }
 
     public String getName() {
