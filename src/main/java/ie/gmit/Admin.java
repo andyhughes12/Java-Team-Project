@@ -43,7 +43,8 @@ public class Admin {
     }
 
     public void setEmployeeNum(long employeeNum){
-        if(employeeNum>=10)
+        int length = String.valueOf(employeeNum).length();
+        if(length == 10)
         {
             this.employeeNum = employeeNum;
         } else
@@ -55,4 +56,21 @@ public class Admin {
     public long getEmployeeNum() {
         return employeeNum;
     }
+
+
+    public String getClientDetails(Client client){
+        String title = client.getTitle();
+        String name = client.getName();
+        String id = client.getId();
+        String eircode = client.getEircode();
+        String phone = client.getPhone();
+        String email = client.getEmail();
+        double balance = client.getBalance();
+        //int age = client.getAge();
+        String clientDetails = "Title = " + title + " name = " + name + "ID" + id + "Eircode" + eircode + "Phone Number" + phone + "Email = " + email + "Balance: " + balance + "Age:" ;
+
+        return clientDetails;
+    }
+
+
 }
