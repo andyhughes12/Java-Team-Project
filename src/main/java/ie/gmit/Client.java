@@ -4,6 +4,7 @@
 
 package ie.gmit;
 
+
 import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.regex.Matcher;
@@ -32,12 +33,6 @@ public class Client {
         setAge(age);
     }
 
-    public Client() {
-
-    }
-
-    public void toSting() {
-    }
 
     public void setTitle(String title) {
         if( (title == "Mr") || (title == "Mrs") || (title == "Ms") )
