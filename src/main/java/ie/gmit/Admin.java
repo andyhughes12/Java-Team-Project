@@ -14,6 +14,8 @@ public class Admin {
 
     }
 
+    public Admin() { }
+
     public void setUsername(String username){
         if(username.length()>=3)
         {

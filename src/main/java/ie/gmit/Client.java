@@ -32,12 +32,6 @@ public class Client {
         setAge(age);
     }
 
-    public Client() {
-
-    }
-
-    public void toSting() {
-    }
 
     public void setTitle(String title) {
         if( (title == "Mr") || (title == "Mrs") || (title == "Ms") )
