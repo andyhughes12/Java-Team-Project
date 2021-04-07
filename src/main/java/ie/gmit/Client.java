@@ -4,6 +4,7 @@
 
 package ie.gmit;
 
+
 import javax.swing.*;
 import java.math.BigDecimal;
 import java.util.regex.Matcher;
@@ -20,7 +21,7 @@ public class Client {
     private double balance;
     private int age;
 
-    public Client(String title, String name, String id, String eircode, String phone, String email, int age, double balance) // Add email
+    public Client(String title, String name, String id, String eircode, String phone, String email, int age, double balance)
     {
         setTitle(title);
         setName(name);
@@ -136,7 +137,6 @@ public class Client {
             throw new IllegalArgumentException("Invalid email");
         }
     }
-    public int getAge() { return age; }
 
     public String getEmail() {
         return email;
@@ -152,6 +152,8 @@ public class Client {
             throw new IllegalArgumentException("Invalid age");
         }
     }
+
+    public int getAge() { return age; }
 
     public void setBalance(double balance) {
 
