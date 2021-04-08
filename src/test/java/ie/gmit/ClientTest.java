@@ -16,7 +16,7 @@ public class ClientTest {
 
     @BeforeEach
     void init() {
-        a1 = new Client("Mr", "Jack", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00);
+        a1 = new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00);
     }
 
     @Test
@@ -26,19 +26,44 @@ public class ClientTest {
 
     @Test
     void testTitleFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Sir", "Jack", "1234567890","H91R7YX", "432111111111","G00@gmit.ie", 20, 5000.00) );
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Sir", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00) );
         assertEquals("Invalid title", e.getMessage());
     }
 
     @Test
-    void testName() {
-        assertEquals("Jack", a1.getName());
+    void testFullName() {
+        assertEquals("Jack Sheridan", a1.getFullName());
     }
 
     @Test
-    void testNameFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Ja", "1234567890","H91R7YX", "432111111111","G00@gmit.ie", 20, 5000.00) );
-        assertEquals("Invalid name", e.getMessage());
+    void testFullNameFail() {
+        //Full name must contaoin a space between t wo words
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "JackSheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00) );
+        assertEquals("Invalid full name", e.getMessage());
+    }
+
+    @Test
+    void testFirstName() {
+        assertEquals("Jack", a1.getFirstName());
+    }
+
+    @Test
+    void testFirstNameFail() {
+        //First name must be longer than 2
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Ja", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00) );
+        assertEquals("Invalid first name", e.getMessage());
+    }
+
+    @Test
+    void testLastName() {
+        assertEquals("Sheridan", a1.getLastName());
+    }
+
+    @Test
+    void testLastNameFail() {
+        //Last name must be longer than 2
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sh", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00) );
+        assertEquals("Invalid last name", e.getMessage());
     }
 
     @Test
@@ -48,7 +73,8 @@ public class ClientTest {
 
     @Test
     void testIdFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234","H91R7YX", "432111111111","G00@gmit.ie", 20, 5000.00) );
+        //Id should be greater than 9
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00) );
         assertEquals("Invalid id", e.getMessage());
     }
 
@@ -59,7 +85,8 @@ public class ClientTest {
 
     @Test
     void testEircodeFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234567890","HRYX", "432111111111","G00@gmit.ie", 20, 5000.00) );
+        //Eircode must be valid
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "HRYX", "432111111111", "G00@gmit.ie", 20, 5000.00) );
         assertEquals("Invalid eircode", e.getMessage());
     }
 
@@ -70,7 +97,8 @@ public class ClientTest {
 
     @Test
     void testPhoneFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234567890","H91R7YX", "4321","G00@gmit.ie", 20, 5000.00) );
+        //Phone number must be longer than 10
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "12345", "G00@gmit.ie", 20, 5000.00) );
         assertEquals("Invalid phone", e.getMessage());
     }
 
@@ -81,7 +109,8 @@ public class ClientTest {
 
     @Test
     void testEmailFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234567890", "H91R7YX", "432111111111", "G00gmit.ie", 20, 5000.00) );
+        //Email must contain an '@' symbol between two words
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00gmit.ie", 20, 5000.00) );
         assertEquals("Invalid email", e.getMessage());
     }
 
@@ -92,7 +121,8 @@ public class ClientTest {
 
     @Test
     void testBalanceFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234567890","H91R7YX", "432111111111","G00@gmit.ie", 20, -5000.00) );
+        //Balance must be greater or equal to 0
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, -5000.00) );
         assertEquals("Invalid balance", e.getMessage());
     }
 
@@ -103,7 +133,8 @@ public class ClientTest {
 
     @Test
     void testAgeFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234567890","H91R7YX", "432111111111","G00@gmit.ie", 15, 5000.00) );
+        //Age must be greater than 16
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 15, 5000.00) );
         assertEquals("Invalid age", e.getMessage());
     }
 }
