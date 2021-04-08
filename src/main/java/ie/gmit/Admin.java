@@ -6,6 +6,7 @@ public class Admin {
     private String password;
     private long employeeNum;
 
+    //admin constructor
     public Admin(String username, String password, long employeeNum)
     {
         setUsername(username);
@@ -14,6 +15,7 @@ public class Admin {
 
     }
 
+    //checking if username is greater than or equal to 3. throws exception if not.
     public void setUsername(String username){
         if(username.length()>=3)
         {
@@ -28,6 +30,7 @@ public class Admin {
         return username;
     }
 
+    //checking if password is greater than or equal to 7. throws exception if not.
     public void setPassword(String password){
         if(password.length()>=7)
         {
@@ -42,6 +45,7 @@ public class Admin {
         return password;
     }
 
+    //check if employee number is equal to 10. throws exception if not.
     public void setEmployeeNum(long employeeNum){
         int length = String.valueOf(employeeNum).length();
         if(length == 10)
@@ -57,7 +61,7 @@ public class Admin {
         return employeeNum;
     }
 
-
+    //
     public String getClientDetails(Client client){
         String title = client.getTitle();
         String name = client.getName();

@@ -4,8 +4,8 @@
 
 package ie.gmit;
 
-import javax.swing.*;
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -19,6 +19,7 @@ public class Client {
     private String email;
     private double balance;
     private int age;
+    private List<Transaction> transactions = new ArrayList<Transaction>();
 
     public Client(String title, String name, String id, String eircode, String phone, String email, int age, double balance) // Add email
     {
@@ -32,8 +33,8 @@ public class Client {
         setAge(age);
     }
 
-    public void toSting() {
-    }
+
+
 
     public void setTitle(String title) {
         if( (title == "Mr") || (title == "Mrs") || (title == "Ms") )
@@ -204,6 +205,30 @@ public class Client {
 
     public double getBalance(){ return balance; }
 
+
+    public void deposit(double amount){
+        if(amount>=5) {
+            Transaction transaction = new Transaction(amount, true, false);
+            transactions.add(transaction);
+            balance = balance + amount;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Deposit amount must be at least 5 Euro");
+        }
+    }
+
+    public void withdraw(double amount){
+        if(amount >= 5 && amount < balance) {
+            Transaction transaction = new Transaction(amount, false, true);
+            transactions.add(transaction);
+            balance = balance - amount;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Withdrawal amount must be at least 5 Euro and may not exceed balance");
+        }
+    }
 
     @Override
     public String toString() {

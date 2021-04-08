@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class ClientTest {
 
     private Client a1;
+    //private Transaction t;
 
     @BeforeEach
     void init() { a1 = new Client("Mr", "Jack", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.00); }
@@ -64,4 +65,7 @@ public class ClientTest {
         Exception e = assertThrows(IllegalArgumentException.class, () -> new Client("Mr", "Jack", "1234567890","H91R7YX", "432111111111","G00@gmit.ie", 15, 5000.00) );
         assertEquals("Invalid age", e.getMessage());
     }
+
+
+
 }
