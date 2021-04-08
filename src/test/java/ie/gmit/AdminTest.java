@@ -10,7 +10,7 @@ public class AdminTest {
 
     private Admin ad1;
 
-    //create admin object before each test
+    //create admin object before each test.
     @BeforeEach
     void init() { ad1 = new Admin("Joe", "gxf5000", 1123456789); }
 
