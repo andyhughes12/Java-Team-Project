@@ -7,6 +7,8 @@ Last updated - 9/04/21
 * */
 package ie.gmit;
 
+import java.text.NumberFormat;
+
 public class Loan {
     private String type;
     private String rate;
@@ -21,6 +23,8 @@ public class Loan {
 
     }
 
+    public Loan() { }
+
     public String getRate() { return rate; }
 
     public String getType() { return type; }
@@ -32,7 +36,7 @@ public class Loan {
 
     public void setType(String type) {
 
-        if( (type == "Personal") || (type == "Morgage")|| (type == "Student") )
+        if( (type == "Personal") || (type == "Mortgage")|| (type == "Student") )
         {
             this.type = type;
         }
@@ -67,7 +71,7 @@ public class Loan {
 
     public void setlength(String length) {
 
-        if ((length == "2 years") || (length == "5 years")|| (length == "20 years"))
+        if ((length == "5 years") || (length == "10 years")|| (length == "20 years"))
         {
             this.length = length;
         }
@@ -76,6 +80,11 @@ public class Loan {
             throw new IllegalArgumentException("Invalid Length");
         }
     }
+
+//    public String getAmountFormatter(){
+//        NumberFormat currency = NumberFormat.getCurrencyInstance();
+//        return currency.format(amount);
+//    }
 
     @Override
     public String toString() {
