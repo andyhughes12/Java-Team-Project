@@ -1,3 +1,10 @@
+/*
+
+Andrew Hughes
+LoanDB Class
+Last updated - 9/04/21
+
+* */
 package ie.gmit;
 
 public class LoanDB {

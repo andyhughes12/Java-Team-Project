@@ -1,3 +1,10 @@
+/*
+
+Andrew Hughes
+LoanDB Test Class
+Last updated - 9/04/21
+
+* */
 package ie.gmit;
 
 import org.junit.jupiter.api.BeforeEach;
