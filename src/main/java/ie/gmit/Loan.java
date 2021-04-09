@@ -71,7 +71,7 @@ public class Loan {
 
     public void setlength(String length) {
 
-        if ((length == "5 years") || (length == "10 years")|| (length == "20 years"))
+        if ((length == "5 years") || (length == "10 years")|| (length == "25 years"))
         {
             this.length = length;
         }

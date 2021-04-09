@@ -52,7 +52,7 @@ public class LoanTest {
         Exception e = assertThrows(IllegalArgumentException.class, () -> new Loan("Personal","5%",0,"5 years") );
         assertEquals("Invalid Amount", e.getMessage());
     }
-    //testing Lenght
+    //testing Length
     @Test
     void testLength() {
         assertEquals("5 years", l1.getLenght());
