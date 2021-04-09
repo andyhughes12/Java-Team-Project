@@ -1,3 +1,10 @@
+/*
+
+Andrew Hughes
+Loan Test Class
+Last updated - 9/04/21
+
+* */
 package ie.gmit;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -12,7 +19,7 @@ public class LoanTest {
 
     @BeforeEach
     void init() {
-        l1 = new Loan("Student",  "0%",500.00,"5 years");
+        l1 = new Loan("Student",  "1%",500.00,"5 years");
     }
 //Testing Type
     @Test
@@ -22,12 +29,12 @@ public class LoanTest {
 
     @Test
     void testTypeFail() {
-        Exception e = assertThrows(IllegalArgumentException.class, () -> new Loan("Personal","5%",500.00,"5 years") );
+        Exception e = assertThrows(IllegalArgumentException.class, () -> new Loan("Car Loan","5%",500.00,"5 years") );
         assertEquals("Invalid Type", e.getMessage());
     }
 //testing Rate
     @Test
-    void testRate() { assertEquals("0%", l1.getRate()); }
+    void testRate() { assertEquals("1%", l1.getRate()); }
 
     @Test
     void testRateFail() {

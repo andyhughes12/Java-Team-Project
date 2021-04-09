@@ -1,16 +1,23 @@
+/*
+
+Andrew Hughes
+Loan Class
+Last updated - 9/04/21
+
+* */
 package ie.gmit;
 
 public class Loan {
     private String type;
     private String rate;
     private double amount;
-    private String lenght;
+    private String length;
 
-    public Loan(String type,String rate,double amount, String lenght) {
+    public Loan(String type,String rate,double amount, String length) {
         setRate(rate);
         setType(type);
         setAmount(amount);
-        setlentgh(lenght);
+        setlength(length);
 
     }
 
@@ -20,12 +27,12 @@ public class Loan {
 
     public double getAmount() { return amount; }
 
-    public String getLenght() { return lenght; }
+    public String getLenght() { return length; }
 
 
     public void setType(String type) {
 
-        if( (type == "Personal") || (type == "Morgage")|| (type == "student") )
+        if( (type == "Personal") || (type == "Morgage")|| (type == "Student") )
         {
             this.type = type;
         }
@@ -58,15 +65,15 @@ public class Loan {
         }
     }
 
-    public void setlentgh(String lenght) {
+    public void setlength(String length) {
 
-        if ((lenght == "2 years") || (lenght == "5 years")|| (lenght == "20 years"))
+        if ((length == "2 years") || (length == "5 years")|| (length == "20 years"))
         {
-            this.lenght = lenght;
+            this.length = length;
         }
         else
         {
-            throw new IllegalArgumentException("Invalid Lenght");
+            throw new IllegalArgumentException("Invalid Length");
         }
     }
 
@@ -76,7 +83,7 @@ public class Loan {
                 "type='" + type + '\'' +
                 ", rate=" + rate +
                 ", amount=" + amount +
-                ", lenght='" + lenght + '\'' +
+                ", lenght='" + length + '\'' +
                 '}';
     }
 
