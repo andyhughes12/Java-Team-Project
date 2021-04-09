@@ -15,7 +15,9 @@ import java.util.regex.Pattern;
 public class Client {
 
     private String title;
-    private String name;
+    private String fullName;
+    private String firstName;
+    private String lastName;
     private String id;
     private String eircode;
     private String phone;
@@ -24,10 +26,12 @@ public class Client {
     private int age;
     private List<Transaction> transactions = new ArrayList<Transaction>();
 
-    public Client(String title, String name, String id, String eircode, String phone, String email, int age, double balance)
+    public Client(String title, String fullName, String firstName, String lastName, String id, String eircode, String phone, String email, int age, double balance)
     {
         setTitle(title);
-        setName(name);
+        setFullName(fullName);
+        setFirstName(firstName);
+        setLastName(lastName);
         setId(id);
         setEircode(eircode);
         setPhone(phone);
@@ -53,21 +57,58 @@ public class Client {
     }
 
 
-    public void setName(String name) {
-        if( name.length() > 2 )
+    public void setFullName(String fullName) {
+
+        String regexFULL = "\\w+ \\w+";
+
+        Pattern pattern = Pattern.compile(regexFULL);
+
+        Matcher matcher = pattern.matcher(fullName);
+        boolean matchFound = matcher.find();
+
+        if(matchFound && matchFound)
         {
-            this.name = name;
+            this.fullName = fullName;
         }
         else
         {
-            throw new IllegalArgumentException("Invalid name");
+            throw new IllegalArgumentException("Invalid full name");
         }
     }
 
-    public String getName() {
-        return name;
+    public String getFullName() {
+        return fullName;
     }
 
+    public void setFirstName(String firstName) {
+        if( firstName.length() > 2 )
+        {
+            this.firstName = firstName;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid first name");
+        }
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setLastName(String lastName) {
+        if( lastName.length() > 2 )
+        {
+            this.lastName = lastName;
+        }
+        else
+        {
+            throw new IllegalArgumentException("Invalid last name");
+        }
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
 
     public void setId(String id) {
         if( id.length() > 9 )
@@ -170,7 +211,7 @@ public class Client {
         }
     }
 
-    public double getBalance(){ return balance; }
+    public double getBalance() { return balance; }
 
     public void deposit(double amount){
         if(amount>=5) {
