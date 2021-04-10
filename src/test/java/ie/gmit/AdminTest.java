@@ -55,4 +55,12 @@ public class AdminTest {
         Exception e = assertThrows(IllegalArgumentException.class, () -> new Admin("Joe", "gxf5000", 1234567) );
         assertEquals("Invalid Employee Number", e.getMessage());
     }
+
+    @Test
+    void testGetClient(){
+        Client client = new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.0);
+        assertEquals("Title: " + "Mr" + "full name: " + "Jack Sheridan" + "first name: " + "Jack" + "last name: " + "Sheridan" + "ID: " + "1234567890" + "Eircode: " + "H91R7YX" + "Phone Number: " + "432111111111" + "Email: " + "G00@gmit.ie" + "Age: " + "20" + "Balance: " + "5000.0"/**/, ad1.getClientDetails(client) );
+    }
+
+
 }
