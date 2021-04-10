@@ -70,9 +70,8 @@ public class Admin {
         String phone = client.getPhone();
         String email = client.getEmail();
         double balance = client.getBalance();
-        //int age = client.getAge();
-        String clientDetails = "Title = " + title + "full name = " + fullName + "first name = " + firstName + "last name = " + lastName + "ID" + id + "Eircode" + eircode + "Phone Number" + phone + "Email = " + email + "Balance: " + balance + "Age:" ;
-
+        int age = client.getAge();
+        String clientDetails = "Title: " + title + "full name: " + fullName + "first name: " + firstName + "last name: " + lastName + "ID: " + id + "Eircode: " + eircode + "Phone Number: " + phone + "Email: " + email + "Age: " + age + "Balance: " + balance/**/  ;
         return clientDetails;
     }
 
