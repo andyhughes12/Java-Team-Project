@@ -36,7 +36,7 @@ public class Loan {
 
     public void setType(String type) {
 
-        if( (type == "Personal") || (type == "Mortgage")|| (type == "Student") )
+        if( (type.equals("Personal")) || (type.equals("Mortgage"))|| (type.equals("Student")) )
         {
             this.type = type;
         }
@@ -85,6 +85,8 @@ public class Loan {
 //        NumberFormat currency = NumberFormat.getCurrencyInstance();
 //        return currency.format(amount);
 //    }
+
+
 
     @Override
     public String toString() {

@@ -11,7 +11,6 @@ public class LoanDB {
 
     public static Loan getLoan(String LoanType) {
 
-
         Loan l2 = new Loan();
         if (LoanType.equalsIgnoreCase("Student")) {
             l2.setType(LoanType);

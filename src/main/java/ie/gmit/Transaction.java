@@ -9,7 +9,6 @@ import java.util.Date;
 
 public class Transaction {
 
-
     private double amount;
     private String time;
     private boolean deposit;
@@ -19,8 +18,6 @@ public class Transaction {
 
     //Transaction constructor
     public Transaction(double amount, boolean deposit, boolean withdraw){
-
-
         setTime();
         setDeposit(deposit);
         setWithdraw(withdraw);
