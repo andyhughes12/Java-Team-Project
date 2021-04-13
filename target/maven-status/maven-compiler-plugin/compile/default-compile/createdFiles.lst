@@ -1,0 +1,5 @@
+ie\gmit\Client.class
+ie\gmit\Transaction.class
+ie\gmit\Loan.class
+ie\gmit\LoanDB.class
+ie\gmit\Admin.class
