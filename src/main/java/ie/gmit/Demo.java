@@ -1,3 +1,9 @@
+/*
+Andrew Hughes
+Demo Class
+
+* */
+
 package ie.gmit;
 
 import java.util.Scanner;
@@ -114,13 +120,5 @@ public class Demo {
         System.out.println("Client ID:" +client.getId());
         System.out.println("Client Contact Details: " + " Phone Number: " + client.getPhone() + "Email: "+ client.getEmail());
         System.out.println("Client Balance: " +client.getBalance());
-
-
-
-
-
     }
-
-
-
 }
