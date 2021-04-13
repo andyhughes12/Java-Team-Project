@@ -26,7 +26,7 @@ public class Demo {
                 loan();
                 break;
             case 3:
-
+                AdminT();
                 break;
             default:
                 System.out.print("Invalid Option");
@@ -105,6 +105,22 @@ public class Demo {
         c2.deposit(deposit);
         System.out.println("New balance: " + c2.getBalance());
     }
+
+    private static void AdminT(){
+        Admin ad2 = new Admin("Joe", "gxf5000", 1123456789);
+        System.out.println("Admin Username: " + ad2.getUsername());
+        Client client = new Client("Mr", "Jack Sheridan", "Jack", "Sheridan", "1234567890", "H91R7YX", "432111111111", "G00@gmit.ie", 20, 5000.0);
+        System.out.println("Client Name:" + client.getFullName());
+        System.out.println("Client ID:" +client.getId());
+        System.out.println("Client Contact Details: " + " Phone Number: " + client.getPhone() + "Email: "+ client.getEmail());
+        System.out.println("Client Balance: " +client.getBalance());
+
+
+
+
+
+    }
+
 
 
 }

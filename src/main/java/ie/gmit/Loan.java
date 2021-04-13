@@ -81,12 +81,6 @@ public class Loan {
         }
     }
 
-//    public String getAmountFormatter(){
-//        NumberFormat currency = NumberFormat.getCurrencyInstance();
-//        return currency.format(amount);
-//    }
-
-
 
     @Override
     public String toString() {
